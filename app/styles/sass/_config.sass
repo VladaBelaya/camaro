@@ -1,0 +1,21 @@
+$textcolor: #333
+$mainfont: nunito, sans-serif
+$descrfont: quicksand, sans-serif
+$colorhead: #242851
+$colordescr: #707283
+$colorwhite: #fff
+$colorsubhead: #FF7751
+$colorcontainer: #FFECE4
+$fontsizeh2: 64px
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@include font('roboto-oh5', normal, 400, '../fonts/roboto-regular-webfont.woff2')
+@include font('roboto-oh5', italic, 400, '../fonts/roboto-italic-webfont.woff2')
+@include font('roboto-oh5', normal, 700, '../fonts/roboto-bold-webfont.woff2')
+@include font('roboto-oh5', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
