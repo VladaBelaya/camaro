@@ -1,0 +1,46 @@
+.main-page
+	background: url('../images/dist/main-bg.png')
+	background-size: 100% 90%
+	background-repeat: no-repeat
+	background-position: 50% 0
+	&__options
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 268px
+	&__range
+		padding: 62px 0
+	&__input
+		display: block
+		transform: rotate(90deg)
+		width: 80px
+		height: 1px
+		-webkit-appearance: none
+	&__input
+		appearance: none
+		position: relative
+		height: 1px
+		background: #676767
+
+	&__input::-webkit-slider-thumb
+		appearance: none
+		position: relative
+		pointer-events: none
+		width: 4px
+		height: 100%
+		border: 0.4px solid rgba(30, 170, 241, 0.57)
+		background: #1eaaf1
+		cursor: pointer
+
+	&__input::-webkit-slider-runnable-track
+		background: #757575
+		height: 1px
+		margin: 5px 0
+
+	&__input:focus
+		outline: none
+	&__item
+		color: $textcolor
+		opacity: .6
+	&__item:not(:last-child)
+		margin-bottom: 36px
