@@ -1,0 +1,26 @@
+.nav
+	&__list
+		display: flex
+	&__item
+		position: relative
+		font-size: 16px
+		color: $textcolor
+		opacity: .6
+		transition: opacity .2s ease-in-out
+	&__item::after
+		display: none
+		position: absolute
+		content: ''
+		top: -4px
+		right: -10px
+		width: 8px
+		height: 8px
+		border-radius: 50%
+		background-color: #FF0000
+		transition: display .2s ease-in-out
+	&__item:not(:last-child)
+		margin-right: 60px
+	&__item:hover
+		opacity: 1
+	&__item:hover::after
+		display: block
