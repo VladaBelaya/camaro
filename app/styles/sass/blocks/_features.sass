@@ -1,0 +1,56 @@
+.features
+	background-image: url('../images/dist/car2.png')
+	background-repeat: no-repeat
+	background-size: 46%
+	background-position: 0 0%
+	&__list
+		margin-right: 300px
+		min-width: 140px
+
+	&__item
+		position: relative
+		margin-bottom: 30px
+		text-align: left
+		font-size: 20px
+		height: 30px
+		opacity: .6
+		cursor: pointer
+		transition-property: opacity, font-size
+		transition-duration: .2s
+		&:hover
+			opacity: 1
+			font-size: 25px
+		&::after
+			content: ''
+			opacity: 0
+			transition-property: opacity
+			transition-duration: .2s
+		&::before
+			content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Integer scelerisque nisi vitae porttitor luctus.'
+			pointer-events: none
+			position: absolute
+			top: 45px
+			left: 150px
+			margin-left: 20px
+			width: 276px
+			padding: 20px 22px
+			font-size: 13px
+			line-height: 20px
+			background: linear-gradient(110.07deg, rgba(255, 255, 255, 0.18) -11.17%, rgba(255, 255, 255, 0) 118.82%, rgba(255, 255, 255, 0.17) 118.82%)
+			opacity: 0
+			transition-property: opacity
+			transition-duration: .2s
+		&:hover::before
+			opacity: 1
+		&:hover::after
+			position: absolute
+			content: ''
+			top: 50%
+			left: -110px
+			width: 90px
+			height: 1px
+			background-color: #FF0000
+			opacity: 1
+		&:hover .btn_features
+			opacity: 1
+			pointer-events: auto
