@@ -1,4 +1,17 @@
 .footer
+	position: relative
+	&::after
+		position: absolute
+		content: ''
+		bottom: -80px
+		right: 0
+		z-index: -1
+		width: 1800px
+		height: 500px
+		background-image: url('../images/dist/tire4.png')
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: bottom
 	&__info
 		flex-basis: 30%
 		margin-right: 100px
@@ -8,7 +21,6 @@
 
 	&__list
 		display: flex
-
 	&__item
 		font-size: 13px
 	&__item:not(:last-child)
