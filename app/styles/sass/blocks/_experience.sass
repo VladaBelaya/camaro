@@ -1,0 +1,54 @@
+.experience
+	position: relative
+	&::before
+		position: absolute
+		content: ''
+		bottom: -246px
+		left: 0
+		z-index: -1
+		width: 860px
+		height: 682px
+		background-image: url('../images/dist/tire3.png')
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: bottom
+	&::after
+		position: absolute
+		top: -488px
+		right: 0
+		content: ''
+		background-image: url('../images/dist/tire2.png')
+		background-repeat: no-repeat
+		width: 275px
+		height: 800px
+		z-index: -1
+	&__content
+		display: flex
+		justify-content: space-between
+	&__left
+		flex-basis: 30%
+	&__bg
+		width: 234px
+		height: 287px
+		margin-bottom: 36px
+		background-image: url('../images/dist/people.png')
+		background-repeat: no-repeat
+		background-size: contain
+		background-position: center
+	&__list
+		padding-top: 200px
+	&__item:not(:last-child)
+		margin-bottom: 46px
+	&__num
+		font-family: $descrfont
+		font-size: 50px
+		line-height: 70px
+		color: #FFC700
+	&__num-green
+		color: #00FFD1
+	&__num-pur
+		color: #FF00E5
+	&__text
+		color: $textcolor
+		font-size: 19px
+		line-height: 30px
