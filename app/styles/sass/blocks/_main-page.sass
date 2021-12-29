@@ -16,8 +16,6 @@
 		transform: rotate(90deg)
 		width: 80px
 		height: 1px
-		-webkit-appearance: none
-	&__input
 		appearance: none
 		position: relative
 		height: 1px
@@ -26,8 +24,9 @@
 	&__input::-webkit-slider-thumb
 		appearance: none
 		position: relative
-		width: 10px
-		height: 100%
+		top: -10px
+		width: 30px
+		height: 30px
 		border: 0.4px solid rgb(250, 0, 0)
 		background: #ff0000
 		cursor: pointer
@@ -60,3 +59,15 @@
 		border: 2px solid #676767
 		background-clip: content-box
 		padding: 2px
+	&__range-start
+		top: 44px
+	&__range-middle
+		top: -9px
+	&__range-end
+		top: -60px
+	&__container-start
+		filter: grayscale(0)
+	&__container-middle
+		filter: saturate(50%)
+	&__container-end
+		filter: grayscale(1)
