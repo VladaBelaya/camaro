@@ -9,6 +9,9 @@
 	border-image: linear-gradient(139.25deg, #676767 -24.21%, rgba(103, 103, 103, 0) 119.43%)
 	border-image-slice: 1
 	text-align: center
+	transition-property: background, color
+	transition-duration: .2s
+	cursor: pointer
 	&:not(:last-child)
 		margin-bottom: 36px
 	&__svg
@@ -16,3 +19,6 @@
 	&__descr
 		font-size: 13px
 		line-height: 20px
+	&:hover
+		background: linear-gradient(135.78deg, #FF4E63 -8.21%, #B90712 114.35%)
+		color: $textcolor

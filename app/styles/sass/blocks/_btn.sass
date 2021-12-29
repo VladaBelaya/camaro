@@ -7,3 +7,22 @@
 	background-repeat: no-repeat
 	background-position: 90% 50%
 	color: $textcolor
+	transition-property: background-color
+	transition-duration: .2s
+	&:hover
+		background-color: #d30000
+	&_up
+		display: none
+	&_up-active
+		display: inline-block
+		position: fixed
+		bottom: 30px
+		right: 30px
+		padding: 34px
+		border-radius: 50%
+		background-image: url('../images/dist/up.png')
+		background-size: 30px
+		background-repeat: no-repeat
+		background-position: center
+		cursor: pointer
+		background-color: red
