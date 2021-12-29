@@ -8,57 +8,59 @@ document.addEventListener('DOMContentLoaded', () => {
 	const mainSlider = document.querySelector('.main-page__slider')
 	const anchorsLinks = document.querySelectorAll('a[href^="#"]')
 	const btnUp = document.querySelector('.btn_up')
-	const styles = [48, -9, -60]
+	const styles = ['main-page__range-start', 'main-page__range-middle', 'main-page__range-end']
+	const bgForRange = ['main-page__container-start', 'main-page__container-middle', 'main-page__container-end']
 	let scrolled
 	let timer
 
-	rangeInput.value = 1
-	labelRangeInput.textContent = `${rangeInput.value} / 3`
-	
+	init()
+
 	rangeInput.addEventListener('input', () => {
 		labelRangeInput.textContent = `${rangeInput.value} / 3`
-		mainSlider.style.top = styles[rangeInput.value - 1]
-		filterRange()
+
+		toggleClass(styles)
+		toggleClass(bgForRange)
 	})
 
-	function filterRange() {
-		switch (rangeInput.value) {
-			case 1:
-				mainPage.style.filter = 'grayscale(0)'
-				break;
-			case 2: 
-				mainPage.style.filter = 'saturate(50%)'
-				break;
-			case 3:
-				mainPage.style.filter = 'grayscale(1)'
-				break;
+	function toggleClass (classes) {
+		const currentClass = classes[rangeInput.value - 1]
+		for (const nameClass of classes) {
+			if (mainSlider.classList.contains(nameClass) && mainPage.classList.contains(nameClass)) {
+				mainSlider.classList.remove(nameClass)
+				mainPage.classList.remove(nameClass)
+			}
+		}
+		mainSlider.classList.add(currentClass) 
+		mainPage.classList.add(currentClass)
+	}
+
+	function scrollToElement () {
+		for (const anchorLink of anchorsLinks) {
+			anchorLink.addEventListener('click', (event) => {
+				event.preventDefault()
+				const currentLink = anchorLink.getAttribute('href').substring(1)
+				const scrollToElement = document.getElementById(currentLink)
+				scrollToElement.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start'
+				})
+			})
 		}
 	}
 
-	for (const anchorLink of anchorsLinks) {
-    anchorLink.addEventListener('click', (event) => {
-      event.preventDefault()
-      const currentLink = anchorLink.getAttribute('href').substr(1)
-      console.log(currentLink)
-      const scrollToElement = document.getElementById(currentLink)
-      scrollToElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      })
-    })
-  }
+	function scrollToHeader () {
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 1300) {
+				btnUp.classList.add('btn_up-active')
+			} else
+			btnUp.classList.remove('btn_up-active')
+		})
 
-	window.addEventListener('scroll', () => {
-		if (window.scrollY > 1300) {
-			btnUp.classList.add('btn_up-active')
-		} else
-		btnUp.classList.remove('btn_up-active')
-	})
-
-	btnUp.addEventListener('click', () => {
-		scrolled = window.pageYOffset
-		scrollToUp()
-	})
+		btnUp.addEventListener('click', () => {
+			scrolled = window.scrollY
+			scrollToUp()
+		})
+	}
 
 
 	function scrollToUp () {
@@ -71,4 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			window.scrollTo(0, 0)
 		}
 	}
+
+	function init() {
+		scrollToElement ()
+		scrollToHeader ()
+	}
 })
+

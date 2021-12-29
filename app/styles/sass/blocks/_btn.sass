@@ -14,15 +14,32 @@
 	&_up
 		display: none
 	&_up-active
+		position: relative
 		display: inline-block
 		position: fixed
 		bottom: 30px
 		right: 30px
-		padding: 34px
+		padding: 20px
 		border-radius: 50%
-		background-image: url('../images/dist/up.png')
-		background-size: 30px
-		background-repeat: no-repeat
-		background-position: center
+
 		cursor: pointer
 		background-color: red
+		opacity: .6
+		&::after
+			position: absolute
+			content: ''
+			width: 14px
+			height: 2px
+			top: 18px
+			left: 8px
+			background-color: $textcolor
+			transform: rotate(-45deg)
+		&::before
+			position: absolute
+			content: ''
+			width: 14px
+			height: 2px
+			top: 18px
+			left: 18px
+			background-color: $textcolor
+			transform: rotate(45deg)
