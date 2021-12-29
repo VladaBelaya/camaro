@@ -8,24 +8,32 @@ document.addEventListener('DOMContentLoaded', () => {
 	const mainSlider = document.querySelector('.main-page__slider')
 	const anchorsLinks = document.querySelectorAll('a[href^="#"]')
 	const btnUp = document.querySelector('.btn_up')
+	const styles = [48, -9, -60]
 	let scrolled
 	let timer
+
 	rangeInput.value = 1
 	labelRangeInput.textContent = `${rangeInput.value} / 3`
+	
 	rangeInput.addEventListener('input', () => {
 		labelRangeInput.textContent = `${rangeInput.value} / 3`
-		
-		if (rangeInput.value == 2) {
-			mainPage.style.filter = 'saturate(50%)'
-			mainSlider.style.top = '-9px'
-		} else if (rangeInput.value == 3) {
-			mainPage.style.filter = 'grayscale(1)'
-			mainSlider.style.top = '-60px'
-		} else {
-			mainPage.style.filter = 'grayscale(0)'
-			mainSlider.style.top = '46px'
-		}
+		mainSlider.style.top = styles[rangeInput.value - 1]
+		filterRange()
 	})
+
+	function filterRange() {
+		switch (rangeInput.value) {
+			case 1:
+				mainPage.style.filter = 'grayscale(0)'
+				break;
+			case 2: 
+				mainPage.style.filter = 'saturate(50%)'
+				break;
+			case 3:
+				mainPage.style.filter = 'grayscale(1)'
+				break;
+		}
+	}
 
 	for (const anchorLink of anchorsLinks) {
     anchorLink.addEventListener('click', (event) => {
