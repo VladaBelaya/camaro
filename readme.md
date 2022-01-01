@@ -1,4 +1,4 @@
-<h1>OptimizedHTML 5</h1>
+<h1><center>OptimizedHTML 5</center></h1>
 <p>Lightweight production-ready Gulp starter.</p>
 
 <p>
