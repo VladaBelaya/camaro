@@ -5,5 +5,5 @@
 	<img src="https://github.com/VladaBelaya/cars-promo/blob/main/app/images/src/cars-promo.gif" alt="Cars Promo">
 </p>
 
-<p><strong>TECHNOLOGY STACK:</strong> HTML, CSS, Sass, Gulp, JS</p>
+<p><strong>TECHNOLOGY STACK:</strong> HTML, CSS, Sass, Gulp, JS, BEM, Git</p>
 
